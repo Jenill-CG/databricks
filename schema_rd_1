@@ -1,0 +1,32 @@
+from pyspark.sql.types import StructType, StructField, StringType, DateType, BooleanType
+
+# Define schema for project assessments
+project_assessments_schema = StructType([
+    StructField("Project Name", StringType(), True),
+    StructField("Operator", StringType(), True),
+    StructField("Assessment Date", DateType(), True),
+    StructField("Assessment Type", StringType(), True),
+    StructField("Academic Year", StringType(), True),
+    StructField("State", StringType(), True),
+    StructField("District", StringType(), True),
+    StructField("City", StringType(), True),
+    StructField("Zone", StringType(), True),
+    StructField("Block", StringType(), True),
+    StructField("Group", StringType(), True),
+    StructField("School Code", StringType(), True),
+    StructField("School Name", StringType(), True),
+    StructField("Classroom Id", StringType(), True),
+    StructField("Common Students", BooleanType(), True),
+    StructField("Student ID", StringType(), False),   # Not nullable (unique identifier)
+    StructField("Student Name", StringType(), True),
+    StructField("Gender", StringType(), True),
+    StructField("Current Grade", StringType(), True),
+    StructField("Grade when Assessed", StringType(), True),
+    StructField("Medium", StringType(), True),
+    StructField("Subject", StringType(), True),
+    StructField("PCSET", StringType(), True)
+])
+
+# Example usage (reading a file with the schema)
+# df = spark.read.schema(project_assessments_schema).csv("dbfs:/path/to/your/data.csv", header=True)
+# df.show()
