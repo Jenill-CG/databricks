@@ -5,6 +5,7 @@ import os
 from snowflake.snowpark.functions import col
 from snowflake.snowpark import Session
 import requests  
+import pandas as pd
 
 connection_parameters = {
     "account": "JUUDHJU-NAB87893",
