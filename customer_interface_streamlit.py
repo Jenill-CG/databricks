@@ -3,6 +3,19 @@ import streamlit as st
 import os
 # from snowflake.snowpark.context import get_active_session
 from snowflake.snowpark.functions import col
+from snowflake.snowpark import Session
+
+connection_parameters = {
+    "account": "JUUDHJU-NAB87893",
+    "user": "JENILTHAKKAR208",
+    "password": "Dataengineering@208",
+    "warehouse": "COMPUTE_WH",
+    "database": "SMOOTHIES",
+    "schema": "PUBLIC",
+    "role": "SYSADMIN"
+}
+
+session = Session.builder.configs(connection_parameters).create()
 
 # Write directly to the app
 st.title(" \U0001F964 Customize Your Smoothie! \U0001F964 ")
